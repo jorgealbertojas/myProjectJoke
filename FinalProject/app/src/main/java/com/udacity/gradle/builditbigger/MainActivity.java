@@ -1,25 +1,31 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.mylibraryjoke.MainActivityJoke;
+import com.example.mylibraryjoke.Joker;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+     //   Joker joker = new Joker();
+     //   textView = (TextView)  findViewById(R.id.tv_joke);
+     //   textView.setText(joker.getJoke());
 
-
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
 
     }
 
@@ -47,12 +53,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-
-
-
-        Intent myIntent = new Intent(this, MainActivityJoke.class);
-        startActivity(myIntent);
-
         Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
     }
 
