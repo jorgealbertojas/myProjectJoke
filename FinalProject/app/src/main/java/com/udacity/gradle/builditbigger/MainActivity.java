@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.libjoke.MyClass;
 import com.example.mylibraryjoke.Joker;
 
 
@@ -21,9 +23,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-     //   Joker joker = new Joker();
-     //   textView = (TextView)  findViewById(R.id.tv_joke);
-     //   textView.setText(joker.getJoke());
+        textView = (TextView)  findViewById(R.id.tv_joke);
+
+        // Create lib Java
+        // MyClass myClass = new MyClass();
+        // textView.setText(myClass.getJoke());
+
+        // Create lib Android
+        // Joker joker = new Joker();
+        // textView.setText(joker.getJoke());
 
         new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
 
