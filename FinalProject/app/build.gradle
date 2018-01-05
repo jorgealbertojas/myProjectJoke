@@ -3,6 +3,10 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion '26.0.2'
+    flavorDimensions "default"
+
+
+
 
     defaultConfig {
         applicationId "com.udacity.gradle.builditbigger"
@@ -17,7 +21,27 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+
     }
+
+    productFlavors{
+        free{
+            applicationId "com.udacity.gradle.builditbigger.free"
+        }
+        paid{
+            applicationId "com.udacity.gradle.builditbigger.paid"
+        }
+    }
+
+    configurations {
+        all {
+            exclude module: 'httpclient'
+            exclude module: 'commons-logging'
+        }
+    }
+
+
 }
 
 dependencies {
