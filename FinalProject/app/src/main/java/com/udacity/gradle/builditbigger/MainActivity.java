@@ -1,6 +1,7 @@
 package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
@@ -9,9 +10,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.libjoke.MyClass;
-import com.example.mylibraryjoke.Joker;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -35,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
         new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "teste"));
 
+
+    }
+
+    @Override
+    public void startActivityForResult(Intent intent, int requestCode) {
+        try {
+            super.startActivityForResult(intent, requestCode);
+        } catch (Exception ignored){}
     }
 
 

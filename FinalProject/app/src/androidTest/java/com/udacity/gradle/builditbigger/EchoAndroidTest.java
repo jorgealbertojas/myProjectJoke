@@ -19,6 +19,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.isAssignableFro
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 import static org.hamcrest.core.AllOf.allOf;
 
 @RunWith(AndroidJUnit4.class)
@@ -27,20 +28,20 @@ public class EchoAndroidTest{
     @Test
     public void testVerifyEchoResponse()  {
 
+        EndpointsAsyncTaskTest endpointsAsyncTaskTest = (EndpointsAsyncTaskTest)  new EndpointsAsyncTaskTest().execute(new Pair<Context, String>(null, "Teste"));
 
-        //GetActivity getActivity = new GetActivity();
-
-        EndpointsAsyncTask endpointsAsyncTask = (EndpointsAsyncTask)  new EndpointsAsyncTask().execute(new Pair<Context, String>(null, "teste"));
+        String getReturn = "";
 
         try {
-            String ttt = endpointsAsyncTask.get();
+            getReturn = endpointsAsyncTaskTest.get().toString();
+
         } catch (InterruptedException e) {e.printStackTrace();
 
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
 
-        assertEquals ("", Echo.echo("hello"));
+        assertTrue(!getReturn.toString().isEmpty());
     }
 
     @Test
