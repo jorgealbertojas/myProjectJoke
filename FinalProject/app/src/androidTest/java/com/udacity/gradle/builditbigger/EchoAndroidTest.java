@@ -28,12 +28,12 @@ public class EchoAndroidTest{
     @Test
     public void testVerifyEchoResponse()  {
 
-        EndpointsAsyncTaskTest endpointsAsyncTaskTest = (EndpointsAsyncTaskTest)  new EndpointsAsyncTaskTest().execute(new Pair<Context, String>(null, "Teste"));
+        EndpointsAsyncTask endpointsAsyncTask = (EndpointsAsyncTask)  new EndpointsAsyncTask().execute(new Pair<Context, String>(null, "Teste"));
 
         String getReturn = "";
 
         try {
-            getReturn = endpointsAsyncTaskTest.get().toString();
+            getReturn = endpointsAsyncTask.get().toString();
 
         } catch (InterruptedException e) {e.printStackTrace();
 

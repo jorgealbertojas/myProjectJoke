@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/libJoke/libJoke.iml" filepath="$PROJECT_DIR$/libJoke/libJoke.iml" />
       <module fileurl="file://$PROJECT_DIR$/mylibraryjoke/mylibraryjoke.iml" filepath="$PROJECT_DIR$/mylibraryjoke/mylibraryjoke.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mylibrarywithactivity/mylibrarywithactivity.iml" filepath="$PROJECT_DIR$/mylibrarywithactivity/mylibrarywithactivity.iml" />
     </modules>
   </component>
 </project>
